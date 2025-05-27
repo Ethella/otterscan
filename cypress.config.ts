@@ -33,7 +33,7 @@ export default defineConfig({
     defaultCommandTimeout: 8_000,
     video: true,
     env: {
-      DEVNET_ERIGON_URL: "http://localhost:8545",
+      DEVNET_ERIGON_URL: "http://localhost:5173/rpc",
       DEVNET_SOURCIFY_SOURCE: "http://localhost:7077",
     },
   },

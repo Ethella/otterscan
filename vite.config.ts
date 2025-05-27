@@ -11,4 +11,13 @@ export default defineConfig({
     viteCompression({ algorithm: "brotliCompress" }),
     imagetools(),
   ],
+  server: {
+    proxy: {
+      '/rpc': {
+        target: 'http://localhost:8545',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/rpc/, ''),
+      },
+    },
+  },
 });

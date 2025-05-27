@@ -42,6 +42,7 @@ const BlockDetails: FC<BlockDetailsProps> = ({ blockNumberOrHash }) => {
   useBlockPageTitle(blockNumberOrHash);
 
   const extraStr = useMemo(() => {
+    console.log("block", block);
     return block && toUtf8String(block.extraData, Utf8ErrorFuncs.replace);
   }, [block]);
   // gasUsedDepositTx: Optimism-specific; "gas used" by the deposit transaction which does

@@ -69,19 +69,19 @@ export const readBlock = async (
     return null;
   }
   const _block: BlockParams = formatter.blockParams(_rawBlock.block);
-  const _rawIssuance = _rawBlock.issuance;
+  const _rawIssuance = _rawBlock.issuance ?? {};
 
   const extBlock: ExtendedBlock = {
-    blockReward: formatter.bigInt(_rawIssuance.blockReward ?? 0),
-    unclesReward: formatter.bigInt(_rawIssuance.uncleReward ?? 0),
-    feeReward: formatter.bigInt(_rawBlock.totalFees),
+    blockReward: formatter.bigInt(_rawIssuance?.blockReward ?? "0x0"),
+    unclesReward: formatter.bigInt(_rawIssuance?.uncleReward ?? "0x0"),
+    feeReward: formatter.bigInt(_rawBlock.totalFees ?? "0x0"),
     size: formatter.number(_rawBlock.block.size),
     sha3Uncles: _rawBlock.block.sha3Uncles,
     stateRoot: _rawBlock.block.stateRoot,
-    totalDifficulty: formatter.bigInt(_rawBlock.block.totalDifficulty),
+    totalDifficulty: formatter.bigInt(_rawBlock.block.totalDifficulty ?? "0x0"),
     transactionCount: formatter.number(_rawBlock.block.transactionCount),
     // Optimism-specific; gas used by the deposit transaction
-    gasUsedDepositTx: formatter.bigInt(_rawBlock.gasUsedDepositTx ?? 0n),
+    gasUsedDepositTx: formatter.bigInt(_rawBlock.gasUsedDepositTx ?? "0x0"),
     ..._block,
   };
   return extBlock;
@@ -208,6 +208,7 @@ export const useBlockData = (
     { keepPreviousData: true },
   );
   if (error) {
+    console.log("error", error);
     return { data: undefined, isLoading: false };
   }
   return { data, isLoading };

@@ -9,7 +9,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-
+console.log("REACT_APP_ETH_RPC_URL", import.meta.env.REACT_APP_ETH_RPC_URL);
 const container = document.getElementById("root");
 const root = createRoot(container!);
 root.render(
