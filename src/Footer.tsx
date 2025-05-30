@@ -6,10 +6,10 @@ const Footer: React.FC = () => {
 
   return (
     <div
-      className={`w-full border-t border-t-gray-100 px-2 py-1 text-xs ${
+      className={`w-full px-2 py-1 text-xs ${
         provider?._network.chainId === 1n
           ? "bg-link-blue text-gray-200"
-          : "bg-orange-400 text-white"
+          : "bg-slate-2 text-white"
       } text-center`}
     >
       {provider ? (

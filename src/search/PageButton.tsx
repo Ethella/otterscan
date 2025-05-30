@@ -13,7 +13,7 @@ const PageButton: FC<PropsWithChildren<PageButtonProps>> = ({
 }) => {
   if (disabled) {
     return (
-      <span className="select-none rounded-lg bg-link-blue/10 px-3 py-2 text-xs text-gray-400">
+      <span className="select-none rounded-lg bg-slate-2 px-3 py-2 text-xs text-secondary-dark">
         {children}
       </span>
     );
@@ -21,7 +21,7 @@ const PageButton: FC<PropsWithChildren<PageButtonProps>> = ({
 
   return (
     <NavLink
-      className="select-none rounded-lg bg-link-blue/10 px-3 py-2 text-xs text-link-blue transition-colors hover:bg-link-blue/100 hover:text-white disabled:cursor-default disabled:bg-link-blue disabled:text-gray-400"
+      className="select-none rounded-lg bg-slate-2 px-3 py-2 text-xs text-secondary-dark transition-colors hover:bg-slate-3 hover:text-secondary-dark disabled:cursor-default disabled:bg-slate-2 disabled:text-secondary-dark"
       to={`?p=${goToPage}`}
     >
       {children}

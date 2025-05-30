@@ -10,7 +10,7 @@ const StandardScrollableTable: FC<
 > = ({ children, isAuto = false }) => (
   <div className="overflow-x-scroll">
     <table
-      className={`w-full ${isAuto ? "table-auto" : "table-fixed"} border-gray-200 px-2 py-2 text-left text-sm [&>*>tr]:items-baseline`}
+      className={`w-full ${isAuto ? "table-auto" : "table-fixed"} border-slate-0 px-2 py-2 text-left text-sm [&>*>tr]:items-baseline`}
     >
       {children}
     </table>

@@ -14,7 +14,7 @@ const SourcifyMenu: React.FC = () => {
         <Menu.Button className="flex h-full w-full items-center justify-center space-x-2 rounded border px-2 py-1 text-sm">
           <FontAwesomeIcon icon={faBars} size="1x" />
         </Menu.Button>
-        <Menu.Items className="absolute right-0 mt-1 flex min-w-max flex-col rounded-b border bg-white p-1 text-sm">
+        <Menu.Items className="absolute right-0 mt-1 flex min-w-max flex-col rounded-b border bg-slate-0 p-1 text-sm">
           <div className="border-b border-gray-300 px-2 py-1 text-xs">
             Sourcify Datasource
           </div>
@@ -49,10 +49,10 @@ const SourcifyMenuItem: React.FC<PropsWithChildren<SourcifyMenuItemProps>> = ({
   <Menu.Item>
     {({ active }) => (
       <button
-        className={`px-2 py-1 text-left text-sm ${
-          active ? "border-orange-200 text-gray-500" : "text-gray-400"
+        className={`px-2 py-1 text-left text-sm bg-slate-0 ${
+          active ? " text-tertiary" : "text-secondary-dark"
         } transition-colors transition-transform duration-75 ${
-          checked ? "text-gray-900" : ""
+          checked ? "text-secondary-dark" : ""
         }`}
         onClick={onClick}
       >

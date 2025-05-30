@@ -11,7 +11,7 @@ export const usePageTitle = (title: string | undefined) => {
   if (title === undefined) {
     return;
   }
-  const siteName = config?.branding?.siteName || "Otterscan";
+  const siteName = config?.branding?.siteName || "Newton";
   const networkTitle = config?.branding?.networkTitle
     ? `| ${config?.branding?.networkTitle} `
     : "";

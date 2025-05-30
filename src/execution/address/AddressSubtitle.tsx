@@ -46,7 +46,7 @@ const AddressSubtitle: FC<AddressSubtitleProps> = ({
         />
         <span>Address</span>
         <span
-          className="font-address text-base text-gray-500"
+          className="font-address text-base text-secondary-dark"
           data-test="address"
         >
           {address}

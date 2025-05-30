@@ -40,7 +40,7 @@ const BlockTransactions: React.FC = () => {
     pageNumber,
     totalTxs === undefined ? undefined : Math.ceil(totalTxs / PAGE_SIZE),
   );
-
+  console.log(data);
   return (
     <StandardFrame>
       <BlockTransactionHeader blockTag={blockNumber} />

@@ -39,7 +39,7 @@ const Home: FC = () => {
       >
         <div className="mb-10 flex">
           <input
-            className="w-full rounded-l border-b border-l border-t px-2 py-1 focus:outline-none"
+            className="w-full rounded-l border-b border-l border-t px-2 py-1 bg-slate-2 focus:outline-none focus:bg-slate-2"
             type="text"
             size={50}
             data-test="home-search-input"
@@ -63,7 +63,7 @@ const Home: FC = () => {
           </button>
         </div>
         <button
-          className="mx-auto mb-10 rounded bg-skin-button-fill px-3 py-1 hover:bg-skin-button-hover-fill focus:outline-none"
+          className="mx-auto mb-10 rounded bg-skin-button-fill px-3 py-1 hover:text-secondary-dark focus:outline-none"
           type="submit"
         >
           Search
@@ -80,7 +80,7 @@ const Home: FC = () => {
         )}
       {latestBlock && (
         <NavLink
-          className="mt-5 flex flex-col items-center space-y-1 text-sm text-gray-500 hover:text-link-blue"
+          className="mt-5 flex flex-col items-center space-y-1 text-sm text-tertiary hover:text-secondary-dark"
           to={blockURL(latestBlock.number)}
           data-test="home-latest-block-header"
         >

@@ -37,7 +37,7 @@ const Block: React.FC = () => {
       <StandardSubtitle>
         <div className="flex items-baseline space-x-1">
           <span>Block</span>
-          <span className="text-base text-gray-500" data-test="block-number">
+          <span className="text-base text-secondary-dark" data-test="block-number">
             #{blockNumberOrHash}
           </span>
           <NavBlock

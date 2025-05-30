@@ -21,7 +21,7 @@ const BlockTransactionHeader: React.FC<BlockTransactionHeaderProps> = ({
     <StandardSubtitle>
       <div className="flex items-baseline space-x-1">
         <span>Transactions</span>
-        <div className="flex space-x-1 text-sm text-gray-500">
+        <div className="flex space-x-1 text-sm text-secondary-dark">
           <span>For Block</span>
           <BlockLink blockTag={blockTag} />
           <NavBlock

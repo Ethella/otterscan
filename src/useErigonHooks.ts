@@ -104,6 +104,20 @@ const blockTransactionsFetcher: Fetcher<
   const _block = formatter.blockParamsWithTransactions(result.fullblock);
   const _receipts = result.receipts;
 
+  // Log block and receipt details for debugging
+  console.log("Block transactions:", _block.transactions.map((t: TransactionResponseParams) => ({
+    hash: t.hash,
+    type: t.type,
+    from: t.from,
+    to: t.to
+  })));
+  console.log("Receipts:", _receipts.map((r: any) => ({
+    transactionHash: r.transactionHash,
+    type: r.type,
+    from: r.from,
+    to: r.to
+  })));
+
   const rawTxs = _block.transactions
     .map((t: TransactionResponseParams, i: number): ProcessedTransaction => {
       const _rawReceipt = _receipts[i];
@@ -114,6 +128,24 @@ const blockTransactionsFetcher: Fetcher<
 
       if (t.hash === null) {
         throw new Error("blockTransactionsFetcher: unknown tx hash");
+      }
+
+      // Validate transaction hash matches receipt
+      if (t.hash !== _rawReceipt.transactionHash) {
+        console.warn(`Transaction hash mismatch at index ${i}:`, {
+          blockTx: {
+            hash: t.hash,
+            type: t.type,
+            from: t.from,
+            to: t.to
+          },
+          receipt: {
+            hash: _rawReceipt.transactionHash,
+            type: _rawReceipt.type,
+            from: _rawReceipt.from,
+            to: _rawReceipt.to
+          }
+        });
       }
 
       let fee: bigint;
@@ -131,7 +163,8 @@ const blockTransactionsFetcher: Fetcher<
       // Handle Optimism-specific values
       let l1Fee: bigint | undefined;
       if (isOptimisticChain(provider._network.chainId)) {
-        if (t.type === 126) {
+        if (t.type === 0x7e) {
+          // Deposit transaction
           fee = 0n;
           effectiveGasPrice = 0n;
         } else {
