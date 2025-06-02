@@ -12,7 +12,7 @@ const ContentFrame: FC<PropsWithChildren<ContentFrameProps>> = ({
 }) => {
   return tabs ? (
     <div
-      className={`divide-y divide-slate-3 rounded-b-lg border bg-slate-1 px-3 ${
+      className={`divide-y divide-border rounded-b-lg border border-border px-3 ${
         isLoading && "opacity-50 transition-opacity"
       }`}
     >
@@ -20,7 +20,7 @@ const ContentFrame: FC<PropsWithChildren<ContentFrameProps>> = ({
     </div>
   ) : (
     <div
-      className={`divide-y divide-slate-3 rounded-lg border bg-slate-1 px-3 ${
+      className={`divide-y divide-border rounded-lg border border-border px-3 ${
         isLoading && "opacity-50 transition-opacity"
       }`}
     >

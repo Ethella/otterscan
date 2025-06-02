@@ -15,7 +15,7 @@ const NavButton: FC<PropsWithChildren<NavButtonProps>> = ({
 }) => {
   if (disabled) {
     return (
-      <span className="rounded bg-slate-1 px-2 py-1 text-xs text-gray-500">
+      <span className="rounded bg-backgroundQuaternary px-2 py-1 text-xs text-textSecondary opacity-50 cursor-not-allowed">
         {children}
       </span>
     );
@@ -23,7 +23,7 @@ const NavButton: FC<PropsWithChildren<NavButtonProps>> = ({
 
   return (
     <NavLink
-      className="rounded bg-slate-2 px-2 py-1 text-xs text-text-primary transition-colors hover:bg-slate-1 hover:text-white disabled:cursor-default disabled:bg-slate-3 disabled:text-gray-400"
+      className="rounded bg-backgroundQuaternary px-2 py-1 text-xs text-textSecondary transition-all duration-200 hover:bg-backgroundTertiary hover:text-textTertiary active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
       to={href}
       onMouseOver={onMouseOver}
     >

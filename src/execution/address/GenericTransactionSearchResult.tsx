@@ -49,13 +49,13 @@ type GenericTransactionSearchResultProps<T> = {
 
 const defaultHeader = (
   <StandardTHead>
-    <th className="w-56">Txn Hash</th>
-    <th className="w-28">Method</th>
-    <th className="w-28">Block</th>
-    <th className="w-28">Age</th>
-    <th>From</th>
-    <th>To</th>
-    <th className="w-44">Value</th>
+    <th className="w-56 text-textSecondary">Txn Hash</th>
+    <th className="w-28 text-textSecondary">Method</th>
+    <th className="w-28 text-textSecondary">Block</th>
+    <th className="w-28 text-textSecondary">Age</th>
+    <th className="text-textSecondary">From</th>
+    <th className="text-textSecondary">To</th>
+    <th className="w-44 text-textSecondary">Value</th>
   </StandardTHead>
 );
 

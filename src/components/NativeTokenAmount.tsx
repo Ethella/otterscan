@@ -26,7 +26,7 @@ const NativeTokenAmount: FC<NativeTokenAmountProps> = ({
   } = useChainInfo();
 
   return (
-    <span className={`text-sm ${value === 0n ? "opacity-30" : ""}`} {...rest}>
+    <span className={`text-sm text-textSecondary ${value === 0n ? "opacity-30" : ""}`} {...rest}>
       <FormattedBalance
         value={value}
         decimals={decimals}

@@ -16,8 +16,8 @@ const PlainAddress: FC<PlainAddressProps> = ({
     return (
       <NavLink
         className={`${
-          dontOverrideColors ? "" : "text-link-blue hover:text-link-blue-hover"
-        } truncate font-address`}
+          dontOverrideColors ? "" : "text-textSecondary hover:text-textTertiary"
+        } truncate font-address underline`}
         to={`/address/${address}`}
         title={address}
       >

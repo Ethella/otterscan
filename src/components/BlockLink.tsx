@@ -19,7 +19,7 @@ const BlockLink: FC<BlockLinkProps> = ({ blockTag }) => {
 
   return (
     <NavLink
-      className={`flex-inline items-baseline space-x-1 break-all text-link-blue hover:text-link-blue-hover ${
+      className={`flex-inline items-baseline space-x-1 break-all text-textSecondary hover:text-textTertiary underline ${
         isNum ? "font-blocknum" : "font-hash"
       }`}
       to={blockURL(blockTag)}

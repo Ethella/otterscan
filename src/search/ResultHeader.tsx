@@ -12,13 +12,13 @@ const ResultHeader: React.FC<ResultHeaderProps> = ({
   feeDisplayToggler,
 }) => (
   <StandardTHead>
-    <th>Txn Hash</th>
-    <th>Method</th>
-    <th className="w-28">Block</th>
-    <th className="w-36">Age</th>
-    <th>From</th>
-    <th>To</th>
-    <th className="min-w-52">Value</th>
+    <th className="text-textSecondary">Txn Hash</th>
+    <th className="text-textSecondary">Method</th>
+    <th className="w-28 text-textSecondary">Block</th>
+    <th className="w-36 text-textSecondary">Age</th>
+    <th className="text-textSecondary">From</th>
+    <th className="text-textSecondary">To</th>
+    <th className="min-w-52 text-textSecondary">Value</th>
     <th>
       <button
         className="text-link-blue hover:text-link-blue-hover"

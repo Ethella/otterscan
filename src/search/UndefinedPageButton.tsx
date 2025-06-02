@@ -17,7 +17,7 @@ const UndefinedPageButton: FC<PropsWithChildren<UndefinedPageButtonProps>> = ({
 }) => {
   if (disabled) {
     return (
-      <span className="select-none rounded-lg bg-slate-2 px-3 py-2 text-xs text-secondary-dark">
+      <span className="select-none rounded-lg bg-backgroundQuaternary px-3 py-2 text-xs text-textSecondary opacity-50 cursor-not-allowed">
         {children}
       </span>
     );
@@ -25,7 +25,7 @@ const UndefinedPageButton: FC<PropsWithChildren<UndefinedPageButtonProps>> = ({
 
   return (
     <NavLink
-      className="select-none rounded-lg bg-slate-2 px-3 py-2 text-xs text-secondary-dark transition-colors hover:bg-slate-3 hover:text-secondary-dark disabled:cursor-default disabled:bg-slate-2 disabled:text-secondary-dark"
+      className="select-none rounded-lg bg-backgroundQuaternary px-3 py-2 text-xs text-textSecondary transition-all duration-200 hover:bg-backgroundTertiary hover:text-textTertiary active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
       to={`/address/${address}/txs/${direction}${
         direction === "prev" || direction === "next" ? `?h=${hash}` : ""
       }`}

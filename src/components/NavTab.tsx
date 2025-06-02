@@ -15,9 +15,9 @@ const NavTab: React.FC<PropsWithChildren<NavTabProps>> = ({
       className={({ isActive }) =>
         `${
           isActive
-            ? "border-white text-white"
-            : "border-transparent text-secondary-dark"
-        } border-b-2 px-3 py-3 text-sm font-bold hover:text-link-blue`
+            ? "border-textSecondary text-textSecondary"
+            : "border-transparent text-textTertiary"
+        } border-b-2 px-3 py-3 text-sm font-bold hover:text-textTertiary`
       }
       to={href}
       end

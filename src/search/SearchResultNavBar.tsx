@@ -38,7 +38,7 @@ const SearchResultNavBar: FC<SearchResultNavBarProps> = ({
   totalFormatter,
 }) => (
   <div className="flex items-baseline justify-between py-3">
-    <div className="text-sm text-secondary-dark">
+    <div className="text-sm text-textTertiary">
       {total === undefined
         ? "Waiting for search results..."
         : totalFormatter(total)}

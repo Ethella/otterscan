@@ -15,14 +15,14 @@ import GenericTransactionSearchResult from "./GenericTransactionSearchResult";
 
 const tableHeader = (
   <StandardTHead>
-    <th className="w-56">Txn Hash</th>
-    <th className="w-28">Method</th>
-    <th className="w-28">Block</th>
-    <th className="w-28">Age</th>
-    <th>From</th>
-    <th>To</th>
-    <th className="w-48">Token</th>
-    <th>Value</th>
+    <th className="w-56 text-textSecondary">Txn Hash</th>
+    <th className="w-28 text-textSecondary">Method</th>
+    <th className="w-28 text-textSecondary">Block</th>
+    <th className="w-28 text-textSecondary">Age</th>
+    <th className="text-textSecondary">From</th>
+    <th className="text-textSecondary">To</th>
+    <th className="w-48 text-textSecondary">Token</th>
+    <th className="text-textSecondary">Value</th>
   </StandardTHead>
 );
 

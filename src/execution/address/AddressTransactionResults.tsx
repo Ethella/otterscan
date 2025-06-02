@@ -195,7 +195,7 @@ type NavBarProps = AddressAwareComponentProps & {
 
 const NavBar: FC<NavBarProps> = ({ address, page, controller }) => (
   <div className="flex items-baseline justify-between py-3">
-    <div className="text-sm text-gray-500">
+    <div className="text-sm text-textTertiary">
       {page === undefined ? (
         <>Waiting for search results...</>
       ) : (

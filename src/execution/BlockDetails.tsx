@@ -81,7 +81,7 @@ const BlockDetails: FC<BlockDetailsProps> = ({ blockNumberOrHash }) => {
           </InfoRow>
           <InfoRow title="Transactions">
             <NavLink
-              className="rounded-lg bg-link-blue/10 px-2 py-1 text-xs text-link-blue hover:bg-link-blue/100 hover:text-white"
+              className="rounded-lg bg-backgroundSecondary px-2 py-1 text-xs text-textTertiary hover:bg-backgroundTertiary hover:text-textTertiary hover:underline"
               to={blockTxsURL(block.number)}
             >
               {block.transactionCount} transactions

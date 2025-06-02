@@ -4,6 +4,7 @@ import { FC, lazy, memo, useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 import Timestamp from "./components/Timestamp";
+import { ThemeSwitcher } from "./components/ThemeSwitcher";
 import { useGenericSearch } from "./search/search";
 import { blockURL, slotURL } from "./url";
 import { useFinalizedSlotNumber, useSlotTimestamp } from "./useConsensus";
@@ -26,7 +27,10 @@ const Home: FC = () => {
   usePageTitle("Home");
 
   return (
-    <div className="flex grow flex-col items-center pb-5">
+    <div className="flex grow flex-col items-center pb-5 relative">
+      <div className="absolute top-4 right-4">
+        <ThemeSwitcher />
+      </div>
       {isScanning && <CameraScanner turnOffScan={() => setScanning(false)} />}
       <div className="mb-10 mt-5 flex max-h-64 grow items-end">
         <Logo />
@@ -39,7 +43,7 @@ const Home: FC = () => {
       >
         <div className="mb-10 flex">
           <input
-            className="w-full rounded-l border-b border-l border-t px-2 py-1 bg-slate-2 focus:outline-none focus:bg-slate-2"
+            className="w-full rounded-l border border-border bg-backgroundTertiary px-2 py-1 text-sm text-textSecondary placeholder:text-textSecondary placeholder:opacity-50 focus:outline-none focus:ring-2 focus:border-secondary"
             type="text"
             size={50}
             data-test="home-search-input"
@@ -54,7 +58,7 @@ const Home: FC = () => {
             autoFocus
           />
           <button
-            className="flex items-center justify-center rounded-r border bg-skin-button-fill px-2 py-1 text-base text-skin-button hover:bg-skin-button-hover-fill focus:outline-none"
+            className="border border-border bg-backgroundTertiary px-2 py-1 text-sm text-textSecondary hover:bg-secondary focus:outline-none focus:ring-2"
             type="button"
             onClick={() => setScanning(true)}
             title="Scan an ETH address using your camera"
@@ -62,12 +66,14 @@ const Home: FC = () => {
             <FontAwesomeIcon icon={faQrcode} />
           </button>
         </div>
-        <button
-          className="mx-auto mb-10 rounded bg-skin-button-fill px-3 py-1 hover:text-secondary-dark focus:outline-none"
-          type="submit"
-        >
-          Search
-        </button>
+        <div className="flex items-center justify-center mb-10">
+          <button
+            className="rounded border border-border text-textSecondary px-3 py-1 text-sm text hover:bg-primary hover:text-text"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
       </form>
       {!(config?.branding?.hideAnnouncements ?? false) &&
         config?.experimental && (
@@ -80,7 +86,7 @@ const Home: FC = () => {
         )}
       {latestBlock && (
         <NavLink
-          className="mt-5 flex flex-col items-center space-y-1 text-sm text-tertiary hover:text-secondary-dark"
+          className="mt-5 flex flex-col items-center space-y-1 text-sm text-textTertiary hover:text-secondary"
           to={blockURL(latestBlock.number)}
           data-test="home-latest-block-header"
         >
@@ -90,7 +96,7 @@ const Home: FC = () => {
       )}
       {finalizedSlotNumber !== undefined && (
         <NavLink
-          className="mt-5 flex flex-col items-center space-y-1 text-sm text-gray-500 hover:text-link-blue"
+          className="mt-5 flex flex-col items-center space-y-1 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
           to={slotURL(finalizedSlotNumber)}
         >
           <div>Finalized slot: {commify(finalizedSlotNumber)}</div>

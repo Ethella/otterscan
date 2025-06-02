@@ -56,7 +56,7 @@ const AddressSubtitle: FC<AddressSubtitleProps> = ({
         {faucets && faucets.length > 0 && <Faucet address={address} rounded />}
         {config?.experimental && <AddressAttributes address={address} full />}
         {resolvedName && resolvedNameTrusted && (
-          <div className="rounded-lg bg-gray-200 px-2 py-1 text-sm text-gray-500">
+          <div className="rounded-lg bg-backgroundQuaternary px-2 py-1 text-sm text-textSecondary">
             <FontAwesomeIcon icon={faTag} size="1x" /> {resolvedName}
           </div>
         )}
